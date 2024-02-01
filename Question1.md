@@ -5,8 +5,15 @@ Create a function `readFileContent(filePath)` that takes the path to a file as i
 
 **Function Signature:**
 ```javascript
+const fs = require('fs').promises;
 function readFileContent(filePath) {
     // Implementation
+    fs.readFile(filePath, 'utf-8').then(content =>{
+          console.log(content);
+   })
+.catch(error=>{
+     console.log(`Error reading file: ${error.message}`);
+    });
 }
 ```
 
